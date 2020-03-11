@@ -13,7 +13,7 @@ public class FileManagerTest {
 
     @Test
     public void should_listAllImageFiles() {
-        List<String> imageList = fileManager.listAllImages();
+        List<String> imageList = fileManager.getImages();
         Assert.assertNotNull(imageList);
         Assert.assertEquals(imageList.size(), 1);
         Assert.assertEquals(imageList.get(0), "epam.png");
@@ -21,7 +21,7 @@ public class FileManagerTest {
 
     @Test
     public void should_listAllDocumentFiles() {
-        List<String> documentFiles = fileManager.listAllDocumentFiles();
+        List<String> documentFiles = fileManager.getDocumentFile();
         Assert.assertNotNull(documentFiles);
         Assert.assertEquals(documentFiles.size(), 1);
         Assert.assertEquals(documentFiles.get(0), "sample.doc");
