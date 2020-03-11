@@ -10,8 +10,8 @@ public class CollectOrderService implements OrderService {
 
     private CollectionService collectionService;
     private NotificationManager notificationManager;
-    private final String INFO_NOTIFICATION_LEVEL = 4;
-    private final String CRITICAL_NOTIFICATION_LEVEL = 1;
+    private final int INFO_NOTIFICATION_LEVEL = 4;
+    private final int CRITICAL_NOTIFICATION_LEVEL = 1;
 
     public void submitOrder(Order order) {
         if (collectionService.isEligibleForCollection(order))
