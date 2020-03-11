@@ -20,7 +20,7 @@ public class DeliveryOrderService implements OrderService {
     }
 
     public void setDeliveryService(DeliveryService deliveryService) {
-        this.mDeliveryService = deliveryService;
+        this.deliveryService = deliveryService;
     }
 
     public void setOrderFulfilmentService(OrderFulfilmentService orderFulfilmentService) {
