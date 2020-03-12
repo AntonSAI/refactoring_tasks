@@ -1,6 +1,7 @@
 package com.epam.engx.cleancode.functions.task2;
 
 
+import javax.xml.soap.SAAJResult;
 import java.util.Map;
 
 
@@ -20,10 +21,14 @@ public class SitePage {
     }
 
     public String getEditablePageUrl(Map<String, String> params) {
+        return HTTP + DOMAIN + EDITABLE + getParams(params) + getAttributes();
+    }
+
+    private String getParams(Map<String, String> params) {
         String paramsString = "";
         for (Map.Entry<String, String> param : params.entrySet())
             paramsString += "&" + param.getKey() + "=" + param.getValue();
-        return HTTP + DOMAIN + EDITABLE + paramsString + getAttributes();
+        return paramsString;
     }
 
     private String getAttributes() {

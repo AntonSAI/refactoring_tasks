@@ -11,17 +11,20 @@ public class Order {
 
     public Double getPriceOfAvailableProducts() {
         double orderPrice = 0.0;
+        removeAvailableProduct();
+        for (Product p : products)
+            orderPrice += p.getProductPrice();
+        return orderPrice;
+    }
+
+    private void removeAvailableProduct() {
         Iterator<Product> iterator = products.iterator();
         while (iterator.hasNext()) {
             Product p = iterator.next();
             if (!p.isAvailable())
                 iterator.remove();
         }
-        for (Product p : products)
-            orderPrice += p.getProductPrice();
-        return orderPrice;
     }
-
 
     public void setProducts(List<Product> products) {
         this.products = products;
