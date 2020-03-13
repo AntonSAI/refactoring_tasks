@@ -70,7 +70,7 @@ public class InterestCalculator {
         return new GregorianCalendar();
     }
 
-    private double getPrincipalandDuration(AccountDetails accountDetails) {
+    private double getPrincipalAndDuration(AccountDetails accountDetails) {
         return accountDetails.getBalance().doubleValue() * durationSinceStartDateInYears(accountDetails.getStartDate());
     }
 }
